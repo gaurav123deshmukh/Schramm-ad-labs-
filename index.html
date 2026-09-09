@@ -6,7 +6,7 @@
     <title>Coming Soon | Schramm AdLabs</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="logosad.webp" type="image/webp">
+    <link rel="icon" href="logosad.png" type="image/png">
     
     <!-- Premium Typography & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,19 +98,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* FIXED LOGO PRESENTATION */
+        /* LOGO PRESENTATION */
         .brand-logo {
             max-width: 320px;
             width: 80vw;
             height: auto;
             margin-bottom: 45px;
-            
-            /* Displays the non-transparent logo elegantly on a dark background */
-            background-color: var(--white);
-            padding: 15px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
             transition: transform 0.4s ease;
         }
 
@@ -194,8 +191,8 @@
 
     <!-- Main Content -->
     <main class="content-card">
-        <!-- Filter removed and styled cleanly -->
-        <img src="logosad.webp" alt="Schramm AdLabs" class="brand-logo">
+        <!-- Updated to use the transparent black-background PNG logo -->
+        <img src="logosad.png" alt="Schramm AdLabs" class="brand-logo">
         
         <h1>We are <strong>coming soon</strong></h1>
     </main>
