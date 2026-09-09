@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
     <title>Coming Soon | Schramm AdLabs</title>
     
-    <!-- Favicon -->
-    <link rel="icon" href="logosad.png" type="image/png">
+    <!-- Favicon updated to ad labs.webp -->
+    <link rel="icon" href="ad labs.webp" type="image/webp">
     
     <!-- Premium Typography & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,6 +92,8 @@
             animation: slideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
             transform: translateY(40px);
+            width: 90vw;
+            max-width: 500px;
         }
 
         @keyframes slideUpFade {
@@ -99,30 +101,35 @@
         }
 
         /* LOGO PRESENTATION */
+        .brand-logo-link {
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .brand-logo-link:hover {
+            transform: scale(1.03);
+        }
+
         .brand-logo {
             max-width: 320px;
-            width: 80vw;
+            width: 100%;
             height: auto;
             margin-bottom: 45px;
             display: block;
             margin-left: auto;
             margin-right: auto;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-            transition: transform 0.4s ease;
-        }
-
-        .brand-logo:hover {
-            transform: scale(1.03);
         }
 
         /* Typography */
         h1 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: 300;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin: 0;
             color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
         }
 
         h1 strong {
@@ -130,6 +137,7 @@
             background: linear-gradient(135deg, var(--white) 20%, var(--primary-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         /* Minimal Footer Contact Details */
@@ -153,6 +161,7 @@
             gap: 40px;
             flex-wrap: wrap;
             margin-bottom: 12px;
+            padding: 0 20px;
         }
 
         .contact-info a {
@@ -182,13 +191,28 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 500;
+            padding: 0 20px;
+            line-height: 1.5;
         }
 
+        /* Mobile Responsiveness */
         @media (max-width: 600px) {
+            .content-card {
+                padding: 40px 30px;
+            }
+            .brand-logo {
+                margin-bottom: 30px;
+            }
             .contact-info {
                 gap: 15px;
                 flex-direction: column;
                 align-items: center;
+            }
+            footer {
+                bottom: 20px;
+            }
+            h1 {
+                letter-spacing: 2px;
             }
         }
     </style>
@@ -200,8 +224,11 @@
 
     <!-- Main Content -->
     <main class="content-card">
-        <img src="logosad.png" alt="Schramm AdLabs" class="brand-logo">
-        <h1>We are <strong>coming soon</strong></h1>
+        <!-- Logo hyperlinked to the specified URL -->
+        <a href="https://www.kbjindia.com/schramm-adlabs" class="brand-logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="logosad.png" alt="Schramm AdLabs" class="brand-logo">
+        </a>
+        <h1>We are <br><strong>coming soon</strong></h1>
     </main>
 
     <!-- Minimal Contact Footer -->
@@ -211,7 +238,7 @@
             <a href="mailto:gauravv@schrammlogistics.com"><i class="fa-solid fa-envelope"></i> gauravv@schrammlogistics.com</a>
         </div>
         <div class="division-text">
-            A Division of KBJ HR INDIA PRIVATE LIMITED
+            A Division of KBJ HR INDIA PRIVATE LIMITED[cite: 1]
         </div>
     </footer>
 
