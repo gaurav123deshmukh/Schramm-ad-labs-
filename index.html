@@ -4,240 +4,185 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
     <title>Coming Soon | Schramm AdLabs</title>
-    <meta name="description" content="Schramm AdLabs is launching soon.">
+    <meta name="description" content="Creative. Digital. Impact. Schramm AdLabs is launching soon.">
     
+    <!-- Favicon -->
+    <link rel="icon" href="ad labs_3.webp" type="image/webp">
+    
+    <!-- Google Fonts & Font Awesome (Matching Brochure Theme) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Schramm AdLabs - Premium Theme[cite: 1] */
+        /* Schramm Ad Labs - Premium Brochure Theme Variables */
         :root {
             --primary-blue: #0973BA;
-            --dark-navy: #0A192F;
-            --accent-teal: #1cb5e0;
-            --text-dark: #1E293B;
-            --text-light: #64748B;
-            --bg-main: #F8FAFC;
+            --secondary-teal: #1cb5e0;
+            --dark-blue: #042A4A;
+            --text-dark: #1A1A1A;
             --white: #FFFFFF;
             --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-main);
-            line-height: 1.7;
-            overflow-x: hidden;
+            color: var(--white);
+            /* Rich Gradient Background from Brochure Theme */
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 50%, var(--secondary-teal) 100%);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 { 
             font-family: 'Montserrat', sans-serif; 
         }
 
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
-
-        /* Header[cite: 1] */
-        header {
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(15px);
-            width: 100%; top: 0; z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03); 
-            padding: 25px 0;
-            text-align: center;
-        }
-
-        .logo img { 
-            max-height: 80px; 
-            width: auto; 
-            transition: var(--transition); 
-            border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(9, 115, 186, 0.2);
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 35px rgba(9, 115, 186, 0.3);
-        }
-
-        /* Coming Soon Hero Section */
-        .hero {
+        /* Main Centered Content */
+        .main-content {
             flex: 1;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            padding: 100px 0;
+            align-items: center;
             text-align: center;
-            background: linear-gradient(to bottom, #FFFFFF 0%, var(--bg-main) 100%);
+            padding: 20px;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero h1 { 
-            font-size: clamp(3.5rem, 8vw, 6rem); 
-            font-weight: 900; 
-            line-height: 1.1; 
-            margin-bottom: 40px; 
-            color: var(--dark-navy);
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span { 
-            color: transparent;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
-            -webkit-background-clip: text;
-        }
-
-        /* Lead Gen Form Section[cite: 1] */
-        .lead-gen-section {
-            background: var(--dark-navy); 
-            color: var(--white); 
-            padding: 50px 40px;
-            border-radius: 16px; 
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(9, 115, 186, 0.15);
-        }
-
-        .lead-gen-section h2 { 
-            color: var(--white); 
-            font-size: 1.8rem; 
-            margin-bottom: 10px; 
-        }
-        
-        .lead-gen-section p { 
-            color: rgba(255,255,255,0.7); 
-            margin-bottom: 25px; 
-            font-size: 0.95rem;
-        }
-
-        .lead-form {
-            display: flex; 
-            gap: 12px; 
-            width: 100%;
-        }
-
-        .lead-form input {
-            flex: 1; 
-            padding: 15px 20px; 
-            border-radius: 8px; 
-            border: 1px solid rgba(255,255,255,0.1); 
-            background: rgba(255,255,255,0.05);
-            color: var(--white);
-            font-family: 'Inter'; 
-            font-size: 1rem;
-            outline: none;
+        /* Logo Badge Presentation */
+        .logo-badge {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 35px;
             transition: var(--transition);
         }
 
-        .lead-form input::placeholder {
-            color: rgba(255,255,255,0.4);
+        .logo-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+            border-color: var(--white);
         }
 
-        .lead-form input:focus { 
-            border-color: var(--accent-teal); 
-            background: rgba(255,255,255,0.1);
+        /* Typography */
+        h1 {
+            font-size: clamp(3.2rem, 8vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            letter-spacing: -1px;
         }
 
-        .btn-primary {
-            background: var(--primary-blue); 
-            color: var(--white); 
-            padding: 15px 30px;
-            font-weight: 700; 
-            border-radius: 8px; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px;
-            transition: var(--transition); 
-            border: none; 
-            cursor: pointer;
-            font-size: 1rem; 
+        p.subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            letter-spacing: 1px;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px); 
-            background: var(--accent-teal); 
-            box-shadow: 0 10px 20px rgba(28, 181, 224, 0.3);
-        }
-
-        /* Footer[cite: 1] */
-        footer { 
-            background: var(--white); 
-            padding: 40px 0; 
-            border-top: 1px solid rgba(0,0,0,0.05); 
-            text-align: center;
+        /* Wave Shape Divider (Connects to Footer) */
+        .custom-shape-divider-bottom {
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            overflow: hidden; 
+            line-height: 0;
         }
         
+        .custom-shape-divider-bottom svg { 
+            position: relative; 
+            display: block; 
+            width: calc(100% + 1.3px); 
+            height: 70px; 
+        }
+        
+        .custom-shape-divider-bottom .shape-fill { 
+            fill: var(--dark-blue); 
+        }
+
+        /* Minimal Footer */
+        footer { 
+            background: var(--dark-blue); 
+            color: var(--white); 
+            padding: 40px 20px 25px; 
+            position: relative; 
+            z-index: 3; 
+            text-align: center;
+        }
+
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            color: var(--text-light);
-            font-size: 0.95rem;
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 25px; 
             flex-wrap: wrap;
         }
 
-        .footer-links i {
-            color: var(--primary-blue);
-            margin-right: 8px;
+        .footer-links span {
+            font-size: 0.95rem; 
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .footer-bottom { 
-            color: var(--text-light); 
-            font-size: 0.85rem; 
+        .footer-links i { 
+            color: var(--secondary-teal); 
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .lead-form { flex-direction: column; }
-            .lead-gen-section { padding: 40px 20px; border-radius: 12px; }
-            .btn-primary { justify-content: center; width: 100%; }
+        .footer-bottom {
+            padding-top: 20px; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            color: rgba(255,255,255,0.5); 
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="ad labs_3.webp" alt="Schramm AdLabs Logo">
-            </a>
+    <!-- Main Coming Soon Section -->
+    <main class="main-content">
+        
+        <img src="ad labs_3.webp" alt="Schramm AdLabs" class="logo-badge">
+        
+        <h1>Coming Soon</h1>
+        <p class="subtitle">Creative. Digital. Impact. <br>We are preparing something extraordinary.</p>
+        
+        <!-- Decorative Wave connecting to footer -->
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
-    </header>
+    </main>
 
-    <!-- Coming Soon Hero -->
-    <section class="hero">
-        <div class="container">
-            <h1><span>Coming</span> Soon</h1>
-            
-            <!-- Lead Generation Form[cite: 1] -->
-            <div class="lead-gen-section">
-                <h2>Get Early Access</h2>
-                <p>Enter your details below to be notified the moment we launch.</p>
-                <form action="#" class="lead-form">
-                    <input type="email" placeholder="Your Work Email" required>
-                    <button type="submit" class="btn-primary">Notify Me <i class="fa-solid fa-bell"></i></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer[cite: 1] -->
+    <!-- Bottom Footer Details -->
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <span><i class="fa-solid fa-phone"></i> +91 8655695279</span>
-                <span><i class="fa-solid fa-envelope"></i> schrammadlabs@kbjindia.com</span>
-                <span><i class="fa-solid fa-location-dot"></i> CBD Belapur, Navi Mumbai</span>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Schramm AdLabs. All Rights Reserved. A Division of KBJ HR INDIA PRIVATE LIMITED.</p>
-            </div>
+        <div class="footer-links">
+            <span><i class="fa-solid fa-phone"></i> +91 8655695279</span>
+            <span><i class="fa-solid fa-envelope"></i> schrammadlabs@kbjindia.com</span>
+            <span><i class="fa-solid fa-location-dot"></i> CBD Belapur, Navi Mumbai</span>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Schramm AdLabs | A Division of KBJ HR INDIA PRIVATE LIMITED.</p>
         </div>
     </footer>
 
