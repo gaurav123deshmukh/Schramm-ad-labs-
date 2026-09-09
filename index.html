@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-    
     <title>Coming Soon | Schramm AdLabs</title>
-    <meta name="description" content="Creative. Digital. Impact. Schramm AdLabs is launching soon with customized marketing plans and performance growth solutions.">
     
     <!-- Favicon -->
-    <link rel="icon" href="logosad.webp" type="image/webp">
+    <link rel="icon" href="logosad_2.webp" type="image/webp">
     
-    <!-- Google Fonts & Font Awesome -->
+    <!-- Premium Typography & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* Premium Clean Light Theme based on logosad.webp */
+        /* Premium Dark Theme Variables */
         :root {
-            --primary-blue: #0056b3; /* Matched to logosad.webp */
-            --dark-blue: #003366;
-            --accent-cyan: #00AEEF; 
-            --text-dark: #1A1A1A;
-            --text-muted: #5A6A80;
-            --bg-pure: #ffffff;
-            --bg-soft: #f4f7fb;
-            --border-light: rgba(0, 86, 179, 0.15);
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --primary-blue: #0973BA;
+            --bg-dark: #030712; 
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -36,345 +31,174 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-soft);
-            min-height: 100vh;
+        body, html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--white);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
             position: relative;
-            overflow-x: hidden;
         }
 
-        /* Subtle Light Gradient Background */
+        /* Engaging Background Elements */
         body::before {
             content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -20%, var(--bg-pure) 0%, var(--bg-soft) 80%);
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: 0;
-            pointer-events: none;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 30px 20px;
+        /* Ambient Breathing Glow */
+        .ambient-glow {
+            position: absolute;
+            width: 70vw;
+            height: 70vw;
+            max-width: 800px;
+            max-height: 800px;
+            background: radial-gradient(circle, rgba(9, 115, 186, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: breathe 6s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes breathe {
+            0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        /* Center Content Card */
+        .content-card {
             position: relative;
             z-index: 2;
-            width: 100%;
             text-align: center;
+            padding: 70px 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            animation: slideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(40px);
         }
 
-        /* Centered Logo Presentation */
-        .brand-header {
-            padding-top: 50px;
+        @keyframes slideUpFade {
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Logo Presentation */
         .brand-logo {
-            width: 320px;
-            max-width: 80vw;
+            max-width: 320px;
+            width: 80vw;
             height: auto;
-            object-fit: contain;
-            transition: var(--transition);
+            margin-bottom: 45px;
+            filter: brightness(0) invert(1) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            transition: transform 0.4s ease;
         }
 
         .brand-logo:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
-        /* Glassmorphism Content Box - Light Version */
-        .glass-panel {
-            background: var(--bg-pure);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 50px 30px;
-            margin: 40px 0;
-            box-shadow: 0 20px 50px rgba(0, 86, 179, 0.08);
-        }
-
-        /* Tagline pill */
-        .slogan-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--primary-blue);
-            background: rgba(0, 86, 179, 0.05);
-            border: 1px solid var(--border-light);
-            padding: 8px 24px;
-            border-radius: 50px;
-            margin-bottom: 25px;
-        }
-
-        /* Headline */
+        /* Typography */
         h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.3rem, 5.5vw, 3.8rem);
-            font-weight: 900;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            color: var(--dark-blue);
-            margin-bottom: 40px;
-        }
-
-        /* Countdown Boxes */
-        .countdown-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 45px;
-            flex-wrap: wrap;
-        }
-
-        .count-box {
-            background: var(--bg-soft);
-            border: 1px solid var(--border-light);
-            padding: 20px 15px;
-            border-radius: 12px;
-            min-width: 95px;
-            flex: 1;
-            max-width: 110px;
-            transition: var(--transition);
-        }
-
-        .count-box:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary-blue);
-            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
-        }
-
-        .count-box .num {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.3rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            display: block;
-            line-height: 1;
-        }
-
-        .count-box .label {
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-top: 8px;
-            display: block;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        /* Lead Capture Notify Form */
-        .lead-form-wrap {
-            max-width: 520px;
-            margin: 0 auto;
+        h1 strong {
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--white) 20%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .notify-form {
-            display: flex;
-            gap: 10px;
-            position: relative;
-        }
-
-        .notify-form input {
-            flex: 1;
-            background: var(--bg-soft);
-            border: 2px solid var(--border-light);
-            padding: 14px 22px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            color: var(--text-dark);
-            border-radius: 8px;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .notify-form input:focus {
-            border-color: var(--primary-blue);
-            background: var(--bg-pure);
-            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
-        }
-
-        .notify-form input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .btn-submit {
-            background: var(--primary-blue);
-            color: var(--bg-pure);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.2);
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            background: var(--dark-blue);
-            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.3);
-        }
-
-        /* Footer */
+        /* Minimal Footer Contact Details matching Schramm Ad Labs Premium Web Template styling */
         footer {
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 25px 0;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            background: var(--bg-pure);
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+            animation: fadeIn 2s ease forwards;
+            opacity: 0;
         }
 
-        .contact-quick-links {
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .contact-info {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 12px;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
-        .contact-quick-links a {
-            color: var(--text-dark);
-            font-weight: 600;
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            transition: var(--transition);
+            font-size: 0.95rem;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
+            transition: var(--transition);
         }
 
-        .contact-quick-links a:hover {
+        .contact-info a i {
             color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--white);
+            transform: translateY(-2px);
         }
 
         @media (max-width: 600px) {
-            .glass-panel {
-                padding: 40px 20px;
-            }
-            .countdown-grid {
-                gap: 10px;
-            }
-            .count-box {
-                min-width: 72px;
-                padding: 16px 8px;
-            }
-            .count-box .num {
-                font-size: 1.8rem;
-            }
-            .notify-form {
+            .contact-info {
+                gap: 15px;
                 flex-direction: column;
-            }
-            .btn-submit {
-                width: 100%;
-                justify-content: center;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Logo Header -->
-    <header class="brand-header">
-        <div class="container">
-            <img src="logosad.webp" alt="Schramm AdLabs" class="brand-logo">
-        </div>
-    </header>
+    <!-- Ambient animated background glow -->
+    <div class="ambient-glow"></div>
 
-    <!-- Main Coming Soon Section -->
-    <main class="content-wrap">
-        <div class="container">
-            <div class="glass-panel">
-                <div>
-                    <span class="slogan-badge">
-                        <i class="fa-solid fa-droplet"></i> Creative. Digital. Impact.
-                    </span>
-                </div>
-                
-                <h1>Customized Marketing Plans <br>Are Coming Soon</h1>
-
-                <!-- Countdown Timer -->
-                <div class="countdown-grid">
-                    <div class="count-box">
-                        <span class="num" id="days">00</span>
-                        <span class="label">Days</span>
-                    </div>
-                    <div class="count-box">
-                        <span class="num" id="hours">00</span>
-                        <span class="label">Hours</span>
-                    </div>
-                    <div class="count-box">
-                        <span class="num" id="minutes">00</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <div class="count-box">
-                        <span class="num" id="seconds">00</span>
-                        <span class="label">Seconds</span>
-                    </div>
-                </div>
-
-                <!-- Pre-Launch Capture Form -->
-                <div class="lead-form-wrap">
-                    <form action="thank-you.html" class="notify-form">
-                        <input type="email" placeholder="Enter work email for early access..." required>
-                        <button type="submit" class="btn-submit">
-                            Notify Me <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <!-- Main Content -->
+    <main class="content-card">
+        <img src="logosad_2.webp" alt="Schramm AdLabs" class="brand-logo">
+        <h1>We are <strong>coming soon</strong></h1>
     </main>
 
-    <!-- Bottom Footer Details -->
+    <!-- Minimal Contact Footer[cite: 1] -->
     <footer>
-        <div class="container">
-            <div class="contact-quick-links">
-                <a href="tel:+917506113382"><i class="fa-solid fa-phone"></i> +91 7506113382</a>
-                <a href="mailto:gauravv@schrammadlabs.com"><i class="fa-solid fa-envelope"></i> gauravv@schrammadlabs.com</a>
-            </div>
-            <p>&copy; 2026 Schramm AdLabs | A Division of KBJ HR INDIA PRIVATE LIMITED.</p>
+        <div class="contact-info">
+            <a href="tel:+917506113382"><i class="fa-solid fa-phone"></i> +91 7506113382</a>
+            <a href="mailto:gauravv@schrammlogistics.com"><i class="fa-solid fa-envelope"></i> gauravv@schrammlogistics.com</a>
         </div>
     </footer>
 
-    <!-- Countdown Timer Script -->
-    <script>
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 30);
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = launchDate.getTime() - now;
-
-            if (distance < 0) {
-                document.querySelector('.countdown-grid').innerHTML = "<p style='font-size: 1.3rem; font-weight:700; color: var(--primary-blue);'>LAUNCHING NOW</p>";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
 </body>
 </html>
