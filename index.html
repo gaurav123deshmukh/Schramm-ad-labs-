@@ -1,351 +1,245 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-    
     <title>Coming Soon | Schramm AdLabs</title>
+    <meta name="description" content="Schramm AdLabs is launching soon.">
     
-    <!-- Favicon -->
-    <link rel="icon" href="ad labs_3.webp" type="image/webp">
-    
-    <!-- Google Fonts & Font Awesome -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Premium Watery Navy & Cyan Theme[cite: 1] */
+        /* Schramm AdLabs - Premium Theme[cite: 1] */
         :root {
             --primary-blue: #0973BA;
             --dark-navy: #0A192F;
-            --watery-blue: rgba(9, 115, 186, 0.65);
-            --quote-cyan: #00AEEF; 
-            --quote-cyan-glow: rgba(0, 174, 239, 0.4);
-            --text-main: #e2e8f0;
-            --text-subtle: #94a3b8;
-            --pure-white: #ffffff;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --accent-teal: #1cb5e0;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --bg-main: #F8FAFC;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--dark-navy);
-            min-height: 100vh;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
+            line-height: 1.7;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle at 50% 50%, var(--watery-blue) 0%, var(--dark-navy) 40%, #030812 100%);
-            animation: drift 20s infinite linear alternate;
-            z-index: 0;
-            pointer-events: none;
+        h1, h2, h3, h4 { 
+            font-family: 'Montserrat', sans-serif; 
         }
 
-        @keyframes drift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 5%) scale(1.05); }
-        }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            position: relative;
-            z-index: 2;
-            width: 100%;
+        /* Header[cite: 1] */
+        header {
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(15px);
+            width: 100%; top: 0; z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03); 
+            padding: 25px 0;
             text-align: center;
         }
 
-        .brand-header {
-            padding-top: 40px;
-        }
-
-        .brand-badge {
-            width: 140px;
-            height: 140px;
+        .logo img { 
+            max-height: 80px; 
+            width: auto; 
+            transition: var(--transition); 
             border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 15px 40px rgba(0, 174, 239, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(9, 115, 186, 0.2);
         }
 
-        .brand-badge:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 20px 50px var(--quote-cyan-glow);
-            border-color: var(--quote-cyan);
+        .logo img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(9, 115, 186, 0.3);
         }
 
-        .glass-panel {
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.6), rgba(9, 115, 186, 0.2));
-            backdrop-filter: blur(16px) saturate(120%);
-            -webkit-backdrop-filter: blur(16px) saturate(120%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 50px 30px;
-            margin: 30px 0;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3rem, 7vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            color: var(--pure-white);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .countdown-grid {
+        /* Coming Soon Hero Section */
+        .hero {
+            flex: 1;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 45px;
-            flex-wrap: wrap;
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #FFFFFF 0%, var(--bg-main) 100%);
         }
 
-        .count-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px 15px;
-            border-radius: 12px;
-            min-width: 95px;
-            flex: 1;
-            max-width: 110px;
-            transition: var(--transition);
+        .hero h1 { 
+            font-size: clamp(3.5rem, 8vw, 6rem); 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin-bottom: 40px; 
+            color: var(--dark-navy);
+            letter-spacing: -1px;
         }
 
-        .count-box:hover {
-            transform: translateY(-4px);
-            border-color: var(--quote-cyan);
-            background: rgba(0, 174, 239, 0.05);
-            box-shadow: 0 10px 20px var(--quote-cyan-glow);
+        .hero h1 span { 
+            color: transparent;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
+            -webkit-background-clip: text;
         }
 
-        .count-box .num {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.3rem;
-            font-weight: 800;
-            color: var(--pure-white);
-            display: block;
-            line-height: 1;
-        }
-
-        .count-box .label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--quote-cyan);
-            margin-top: 8px;
-            display: block;
-        }
-
-        .lead-form-wrap {
-            max-width: 520px;
+        /* Lead Gen Form Section[cite: 1] */
+        .lead-gen-section {
+            background: var(--dark-navy); 
+            color: var(--white); 
+            padding: 50px 40px;
+            border-radius: 16px; 
+            max-width: 600px;
             margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(9, 115, 186, 0.15);
         }
 
-        .notify-form {
-            display: flex;
-            gap: 10px;
-            position: relative;
+        .lead-gen-section h2 { 
+            color: var(--white); 
+            font-size: 1.8rem; 
+            margin-bottom: 10px; 
+        }
+        
+        .lead-gen-section p { 
+            color: rgba(255,255,255,0.7); 
+            margin-bottom: 25px; 
+            font-size: 0.95rem;
         }
 
-        .notify-form input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 22px;
-            font-family: 'Inter', sans-serif;
+        .lead-form {
+            display: flex; 
+            gap: 12px; 
+            width: 100%;
+        }
+
+        .lead-form input {
+            flex: 1; 
+            padding: 15px 20px; 
+            border-radius: 8px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            background: rgba(255,255,255,0.05);
+            color: var(--white);
+            font-family: 'Inter'; 
             font-size: 1rem;
-            color: var(--pure-white);
-            border-radius: 8px;
             outline: none;
             transition: var(--transition);
         }
 
-        .notify-form input:focus {
-            border-color: var(--quote-cyan);
-            background: rgba(0, 174, 239, 0.05);
-            box-shadow: 0 0 0 4px var(--quote-cyan-glow);
+        .lead-form input::placeholder {
+            color: rgba(255,255,255,0.4);
         }
 
-        .notify-form input::placeholder {
-            color: var(--text-subtle);
+        .lead-form input:focus { 
+            border-color: var(--accent-teal); 
+            background: rgba(255,255,255,0.1);
         }
 
-        .btn-submit {
-            background: linear-gradient(135deg, var(--quote-cyan), #00d4ff);
-            color: var(--pure-white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 8px;
+        .btn-primary {
+            background: var(--primary-blue); 
+            color: var(--white); 
+            padding: 15px 30px;
+            font-weight: 700; 
+            border-radius: 8px; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px;
+            transition: var(--transition); 
+            border: none; 
             cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px var(--quote-cyan-glow);
+            font-size: 1rem; 
         }
 
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6);
+        .btn-primary:hover {
+            transform: translateY(-2px); 
+            background: var(--accent-teal); 
+            box-shadow: 0 10px 20px rgba(28, 181, 224, 0.3);
         }
 
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 25px 0;
-            font-size: 0.85rem;
-            color: var(--text-subtle);
-            background: rgba(10, 25, 47, 0.4);
-            backdrop-filter: blur(8px);
+        /* Footer[cite: 1] */
+        footer { 
+            background: var(--white); 
+            padding: 40px 0; 
+            border-top: 1px solid rgba(0,0,0,0.05); 
+            text-align: center;
         }
-
-        .contact-quick-links {
+        
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 12px;
+            gap: 30px;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
             flex-wrap: wrap;
         }
 
-        .contact-quick-links a {
-            color: var(--text-main);
-            font-weight: 500;
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        .footer-links i {
+            color: var(--primary-blue);
+            margin-right: 8px;
         }
 
-        .contact-quick-links a:hover {
-            color: var(--quote-cyan);
+        .footer-bottom { 
+            color: var(--text-light); 
+            font-size: 0.85rem; 
         }
 
-        @media (max-width: 600px) {
-            .glass-panel { padding: 40px 20px; }
-            .brand-badge { width: 110px; height: 110px; }
-            .countdown-grid { gap: 10px; }
-            .count-box { min-width: 72px; padding: 16px 8px; }
-            .count-box .num { font-size: 1.8rem; }
-            .notify-form { flex-direction: column; }
-            .btn-submit { width: 100%; justify-content: center; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .lead-form { flex-direction: column; }
+            .lead-gen-section { padding: 40px 20px; border-radius: 12px; }
+            .btn-primary { justify-content: center; width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Badge Header -->
-    <header class="brand-header">
+    <!-- Header -->
+    <header>
         <div class="container">
-            <img src="ad labs_3.webp" alt="Schramm AdLabs" class="brand-badge">
+            <a href="index.html" class="logo">
+                <img src="ad labs_3.webp" alt="Schramm AdLabs Logo">
+            </a>
         </div>
     </header>
 
-    <!-- Main Coming Soon Section -->
-    <main class="content-wrap">
+    <!-- Coming Soon Hero -->
+    <section class="hero">
         <div class="container">
-            <div class="glass-panel">
-                
-                <h1>Coming Soon</h1>
-
-                <!-- Countdown Timer -->
-                <div class="countdown-grid">
-                    <div class="count-box">
-                        <span class="num" id="days">00</span>
-                        <span class="label">Days</span>
-                    </div>
-                    <div class="count-box">
-                        <span class="num" id="hours">00</span>
-                        <span class="label">Hours</span>
-                    </div>
-                    <div class="count-box">
-                        <span class="num" id="minutes">00</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <div class="count-box">
-                        <span class="num" id="seconds">00</span>
-                        <span class="label">Seconds</span>
-                    </div>
-                </div>
-
-                <!-- Pre-Launch Capture Form -->
-                <div class="lead-form-wrap">
-                    <form action="thank-you.html" class="notify-form">
-                        <input type="email" placeholder="Enter work email for early access..." required>
-                        <button type="submit" class="btn-submit">
-                            Notify Me <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </form>
-                </div>
+            <h1><span>Coming</span> Soon</h1>
+            
+            <!-- Lead Generation Form[cite: 1] -->
+            <div class="lead-gen-section">
+                <h2>Get Early Access</h2>
+                <p>Enter your details below to be notified the moment we launch.</p>
+                <form action="#" class="lead-form">
+                    <input type="email" placeholder="Your Work Email" required>
+                    <button type="submit" class="btn-primary">Notify Me <i class="fa-solid fa-bell"></i></button>
+                </form>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Bottom Footer Details -->
+    <!-- Footer[cite: 1] -->
     <footer>
         <div class="container">
-            <div class="contact-quick-links">
-                <a href="tel:+917506113382"><i class="fa-solid fa-phone"></i> +91 7506113382</a>
-                <a href="mailto:gauravv@schrammadlabs.com"><i class="fa-solid fa-envelope"></i> gauravv@schrammadlabs.com</a>
-                <span><i class="fa-solid fa-location-dot"></i> CBD Belapur, Navi Mumbai[cite: 1]</span>
+            <div class="footer-links">
+                <span><i class="fa-solid fa-phone"></i> +91 8655695279</span>
+                <span><i class="fa-solid fa-envelope"></i> schrammadlabs@kbjindia.com</span>
+                <span><i class="fa-solid fa-location-dot"></i> CBD Belapur, Navi Mumbai</span>
             </div>
-            <p>&copy; 2026 Schramm AdLabs | A Division of KBJ HR INDIA PRIVATE LIMITED[cite: 1].</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Schramm AdLabs. All Rights Reserved. A Division of KBJ HR INDIA PRIVATE LIMITED.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Countdown Timer Script -->
-    <script>
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 30);
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = launchDate.getTime() - now;
-
-            if (distance < 0) {
-                document.querySelector('.countdown-grid').innerHTML = "<p style='font-size: 1.5rem; font-weight:700; color: var(--quote-cyan);'>LAUNCHING NOW</p>";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
 </body>
 </html>
